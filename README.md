@@ -31,3 +31,23 @@ document.getElementById("parentElement").addEventListener("click", function () {
 ```
 
 ![creatingChildren](https://www.bilder-upload.eu/upload/3160fd-1556390025.gif)
+
+If we want to add a script-tag along with the chilBoxes, we can just add a new attribute to our object.
+
+```javascript
+document.getElementById("parentElement").addEventListener("click", function () {
+    this.appendFromObject({
+        div: {
+            title: "iamChildBox",
+            class: "childBox"
+        },
+        script: {
+            src: "example.js",
+            type: "text/javascript"
+        }
+    });
+});
+
+```
+
+![Adding Script](https://www.bilder-upload.eu/upload/52fe67-1556392445.gif)
