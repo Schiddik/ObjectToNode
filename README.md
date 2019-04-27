@@ -82,4 +82,62 @@ document.getElementById("parentElement").addEventListener("click", function () {
 
 ![MultiLayers](https://www.bilder-upload.eu/upload/7834a2-1556393727.gif)
 
+## insertBeforeFromObject()
+This function is equivalent to the insertBefore() function from javascript.
+You pass your object as the first parameter and a child node of the parent as the second.
 
+If our parent looked like this...
+
+```HTML
+<div id="parentElement">
+    <div class="redBox"></div>
+    <div class="redBox"></div>
+</div>
+```
+
+![redBox](https://www.bilder-upload.eu/upload/f414ad-1556394529.png)
+
+... and we wanted to insert our new childBoxes before the second redBox, the code would look like this:
+
+```javascript
+document.getElementById("parentElement").addEventListener("click", function () {
+    this.insertBeforeFromObject({
+        div: {
+            title: "iamChildBox",
+            class: "childBox",
+            children: {
+                div: {
+                    class: "smallerChildren"
+                }
+            }
+        }
+    }, this.childNodes[2]);
+
+});
+```
+
+![redBoxes](https://www.bilder-upload.eu/upload/9890fd-1556395015.gif)
+
+## return values
+Both functions return an array in which the top nodes (first layer nodes) are stored.
+
+For example:
+```javascript
+document.getElementById("parentElement").addEventListener("click", function () {
+    var returnValue = this.insertBeforeFromObject({
+        div: {
+            title: "iamChildBox",
+            class: "childBox",
+            children: {
+                div: {
+                    class: "smallerChildren"
+                }
+            }
+        },
+        script: {
+            id: "iamascript"
+        }
+    }, this.childNodes[2]);
+    console.log(returnValue);
+});
+```
