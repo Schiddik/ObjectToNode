@@ -51,3 +51,35 @@ document.getElementById("parentElement").addEventListener("click", function () {
 ```
 
 ![Adding Script](https://www.bilder-upload.eu/upload/52fe67-1556392445.gif)
+
+## Multiple layers
+By adding a "children" attribute - which itself is an object - to our object, we can achieve multiple layers.
+Let's assume we want to have a div inside our childBoxes. In this case it will be a black box with a class of "smallerchildren". We'll just add a children-attribute to our div-object.
+
+```HTML
+<div class="smallerChildren">
+```
+![smallerChildren](https://www.bilder-upload.eu/upload/174306-1556393257.png)
+
+For demonstration purposes, i removed the script-tag. The following code will append a multi layered child to our parent element.
+
+```javascript
+document.getElementById("parentElement").addEventListener("click", function () {
+    this.appendFromObject({
+        div: {
+            title: "iamChildBox",
+            class: "childBox",
+            children: {
+                div:{
+                    class: "smallerChildren"
+                }
+            }
+        }
+    });
+
+});
+```
+
+![MultiLayers](https://www.bilder-upload.eu/upload/7834a2-1556393727.gif)
+
+
