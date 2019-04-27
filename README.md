@@ -237,7 +237,7 @@ document.getElementById("parentElement").addEventListener("click", function () {
 ## Creating multiple elements from an array
 
 This function is a just an idea, which has to be improved...
-The idea is to crate multiple elements through an array.
+The idea is to create multiple elements through an array.
 It returns an object, in which the attributes are numerated.
 This object then can be interpreted by the functions above.
 
