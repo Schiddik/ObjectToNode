@@ -141,3 +141,47 @@ document.getElementById("parentElement").addEventListener("click", function () {
     console.log(returnValue);
 });
 ```
+
+![LoggingTheReturn](https://www.bilder-upload.eu/upload/84f90f-1556395573.png)
+
+## Adding style
+For adding style, you can use the "style" attribute. The value can either be a string or an object.
+
+For example, this...
+```javascript
+document.getElementById("parentElement").addEventListener("click", function () {
+    this.insertBeforeFromObject({
+        div: {
+            class: "childBox",
+            innerHTML: "Iam a ChildBox",
+            style: "color: red",
+            children: {
+                div: {
+                    class: "smallerChildren",
+                }
+            }
+        }
+    }, this.childNodes[2]);
+});
+
+```
+
+... is the same as:
+```javascript
+document.getElementById("parentElement").addEventListener("click", function () {
+    this.insertBeforeFromObject({
+        div: {
+            class: "childBox",
+            innerHTML: "Iam a ChildBox",
+            style: {
+                color:"red"
+            },
+            children: {
+                div: {
+                    class: "smallerChildren",
+                }
+            }
+        }
+    }, this.childNodes[2]);
+});
+```
