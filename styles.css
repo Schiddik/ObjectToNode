@@ -1,0 +1,30 @@
+#parentElement{
+    width:400px;
+    min-height: 400px;
+    height: min-content;
+    background: rgb(20, 255, 71);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+}
+.childBox{
+    width: min-content;
+    min-width: 80px;
+    height: 80px;
+    padding: 10px;
+    margin: 3px;
+    border: 1px solid blue;
+    background: #fff;
+}
+.smallerChildren{
+    width: 20px;
+    height: 20px;
+    background: #000;
+}
+.redBox{
+    width: 100px;
+    height: 100px;
+    background: red;
+    margin: 5px;
+}
