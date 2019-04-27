@@ -185,3 +185,5 @@ document.getElementById("parentElement").addEventListener("click", function () {
     }, this.childNodes[2]);
 });
 ```
+## NOTE
+* Your innerHTML-attribute should always be declared BEFORE the children-attribute... Otherwise it will overwrite everything.
