@@ -234,3 +234,28 @@ document.getElementById("parentElement").addEventListener("click", function () {
 * To create an element with no attributes, we pass an empty object, what can be seen in the example above.
 
 
+## Creating multiple elements from an array
+
+This function is a just an idea, which has to be improved...
+The idea is to crate multiple elements through an array.
+It returns an object, in which the attributes are numerated.
+This object then can be interpreted by the functions above.
+
+```javascript
+document.getElementById("parentElement").addEventListener("click", function () {
+    var listItems = createMultipleItems("li", ["fistItem","secondItem","thirdItem"]);
+    this.insertBeforeFromObject({
+        div: {
+            class: "childBox",
+            children:{
+                ul: {
+                    children: listItems
+                }
+            }
+        }
+    }, this.childNodes[2]);
+});
+```
+![Liste](https://www.bilder-upload.eu/upload/554a8c-1556398186.png)
+
+
