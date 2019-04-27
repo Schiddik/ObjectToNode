@@ -6,4 +6,7 @@ Our target is to add multi layered child-nodes to an element without having to t
 Basically these two functions allow you to append/insert childnodes to your parent by passing an object as an argument.
 
 ## Examples
-
+Let's say we we have a parent Element in our HTML-Element.
+```HTML
+<div id="parentElement"></div>
+```
