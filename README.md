@@ -217,7 +217,20 @@ document.getElementById("parentElement").addEventListener("click", function () {
     }, this.childNodes[2]);
 });
 ```
+This on the other hand works, because the divs are in different objects...
 
-
+```javascript
+document.getElementById("parentElement").addEventListener("click", function () {
+    this.insertBeforeFromObject({
+        div: {
+            class: "childBox",
+            children:{
+                div:{}
+            }
+        }
+    }, this.childNodes[2]);
+});
+```
+* To create an element with no attributes, we pass an empty object, what can be seen in the example above.
 
 
