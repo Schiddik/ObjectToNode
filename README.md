@@ -188,7 +188,7 @@ document.getElementById("parentElement").addEventListener("click", function () {
 ## NOTE
 * Your innerHTML-attribute should always be declared BEFORE the children-attribute... Otherwise it will overwrite everything.
 
-* If you want to create multiple children of the same type in one layer, you have to numerate them, because objects shouldn't have two attributes with the saame name...
+* If you want to create multiple children of the same type in one layer, you have to numerate them, because objects shouldn't have two attributes with the same name...
 
 For example, the following code won't function, bacause the object has twi attributes named "div":
 ```javascript
